@@ -1,0 +1,16 @@
+{
+  "name": "tv-programm-reminder",
+  "version": "1.0.0",
+  "description": "a small bot that notifies people when their favorite tv show runs",
+  "main": "scraper.js",
+  "scripts": {
+    "start": "node scraper.js"
+  },
+  "author": "alexander ehrenhöfer",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.10",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6"
+  }
+}
