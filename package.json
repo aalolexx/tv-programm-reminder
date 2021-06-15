@@ -4,7 +4,7 @@
   "description": "a small bot that notifies people when their favorite tv show runs",
   "main": "scraper.js",
   "scripts": {
-    "start": "node scraper.js"
+    "start": "node reminder.js"
   },
   "author": "alexander ehrenhöfer",
   "license": "ISC",
