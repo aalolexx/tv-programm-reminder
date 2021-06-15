@@ -1,12 +1,16 @@
 const sgMail = require('@sendgrid/mail')
 
 class Mailer {
-  constructor (showArray, mailKey, mailReceiver, mailSender) {
+  constructor (channels, mailKey, mailReceiver, mailSender) {
     this.key = mailKey
     this.mailReceiver = mailReceiver
     this.mailSender = mailSender
-    this.showArray = showArray
+    this.channels = channels
     sgMail.setApiKey(this.key)
+  }
+
+  setShows (showArray) {
+    this.showArray = showArray
   }
 
   sendMail () {
@@ -23,9 +27,13 @@ class Mailer {
   buildMailMessage () {
     let body = `
       <h2>Hallo!</h2>
-      <p>Gerne erinneren wir sie, dass ihre Lieblingssendungen Morgen wieder läuft!</p>
-      <p>Unsere Recherche hat folgende Sendungen für sie im morgigen TV Programm gefunden</p>
+      <p>Gerne erinneren wir sie, dass ihre Lieblingssendung Morgen wieder läuft!</p>
+      <p>Unsere Recherche hat folgende Sendungen für sie im morgigen TV Programm gefunden:</p>
       ${this.showArray.join('<br>')}
+      <p>
+        Folgende Sender haben wir durchsstöbert: <br>
+        ${this.channels.join(', ')}
+      </p>
       </p>Viel Spaẞ!</p>
     `
     return body

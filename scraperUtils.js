@@ -17,7 +17,7 @@ async function scrape (url, channels) {
   
   for (let currentChannel of channels) {
     let shows = []
-    let channelFinder = $('a[href="/tv/programm/' + currentChannel + '/morgen"]', res)
+    let channelFinder = $('a[href="/tv/programm/' + currentChannel + '/heute"]', res)
     if (channelFinder) {
       let channelProgrammNodes = $('.containerMoreChannel .tvsendungMoreChannel', channelFinder.parent().parent())
       for (let programmNode of channelProgrammNodes) {
@@ -44,7 +44,7 @@ function searchShow (channelShows, searchTerms) {
     for (let show of channelShows[channel]) {
       for (let searchTerm of searchTerms) {
         if (show.includes(searchTerm)) {
-          foundShows.push(show + ' auf ' + channel)
+          foundShows.push(show + ' auf <strong>' + channel + '</strong>')
         }
       }
     }
