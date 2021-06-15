@@ -22,7 +22,7 @@ async function scrape (url, channels) {
       let channelProgrammNodes = $('.containerMoreChannel .tvsendungMoreChannel', channelFinder.parent().parent())
       for (let programmNode of channelProgrammNodes) {
         if (programmNode && programmNode.children[0]) {
-          shows.push(programmNode.children[0].data)
+          shows.push(programmNode.children[0].data.toLowerCase())
         }
       }
     }
@@ -33,6 +33,27 @@ async function scrape (url, channels) {
 }
 
 
+/**
+ * Search occurences of the given TV show
+ * @param {Object} channelShows 
+ * @return Array of prepared Strings
+ */
+function searchShow (channelShows, searchTerms) {
+  let foundShows = []
+  for (let channel of Object.keys(channelShows)) {
+    for (let show of channelShows[channel]) {
+      for (let searchTerm of searchTerms) {
+        if (show.includes(searchTerm)) {
+          foundShows.push(show + ' auf ' + channel)
+        }
+      }
+    }
+  }
+  return foundShows
+}
+
+
 module.exports = {
-  scrape: scrape
+  scrape: scrape,
+  searchShow: searchShow
 }

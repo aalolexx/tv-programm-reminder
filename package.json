@@ -9,6 +9,7 @@
   "author": "alexander ehrenhöfer",
   "license": "ISC",
   "dependencies": {
+    "@sendgrid/mail": "^7.4.4",
     "cheerio": "^1.0.0-rc.10",
     "request": "^2.88.2",
     "request-promise": "^4.2.6"

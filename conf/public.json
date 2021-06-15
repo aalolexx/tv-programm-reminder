@@ -2,7 +2,17 @@
   "url": "https://tvgenial.online/tvprogramm/%C3%9Cbersicht/1",
   "channels": [
     "zdf",
-    "rtl",
-    "ard"
+    "ard",
+    "swr",
+    "hr",
+    "ndr",
+    "wdr",
+    "3sat",
+    "br",
+    "zdf-neo"
+  ],
+  "searchTerms": [
+    "mord mit aussicht",
+    "tagesschau"
   ]
 }
