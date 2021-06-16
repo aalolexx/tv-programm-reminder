@@ -27,8 +27,8 @@ class Mailer {
   buildMailMessage () {
     let body = `
       <h2>Hallo!</h2>
-      <p>Gerne erinneren wir sie, dass ihre Lieblingssendung Morgen wieder läuft!</p>
-      <p>Unsere Recherche hat folgende Sendungen für sie im morgigen TV Programm gefunden:</p>
+      <p>Gerne erinneren wir sie, dass ihre Lieblingssendung Heute wieder läuft!</p>
+      <p>Unsere Recherche hat folgende Sendungen für sie im heutigen TV Programm gefunden:</p>
       ${this.showArray.join('<br>')}
       <p>
         Folgende Sender haben wir durchsstöbert: <br>
