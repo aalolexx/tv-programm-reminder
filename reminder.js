@@ -2,7 +2,7 @@ const scraperUtils = require('./scraperUtils.js')
 const Mailer = require('./Mailer.js')
 const publicConf = require('./conf/public.json')
 const privateConf = require('./conf/private.json')
-var CronJob = require('cron').CronJob
+const CronJob = require('cron').CronJob
 
 let mailer = new Mailer(publicConf.channels,
                         privateConf.mailKey,
